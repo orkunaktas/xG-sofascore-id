@@ -102,7 +102,7 @@ if st.button('Verileri Çek'):
     driver.quit()
 
     # Son olarak, sadece "Expected goals" verilerini filtreleme
-    final_df = all_normalized_data[(all_normalized_data["name"] == "Expected goals")]
+    final_df = all_normalized_data[all_normalized_data["name"].isin(["Expected goals", "Corner kicks"])]
 
     # Sonuçları yazdırma
     st.write(final_df)
